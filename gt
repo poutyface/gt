@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'open-uri'
+require 'uri'
+require 'json'
+
+GOOGLE_API_KEY = ENV['GOOGLE_API_KEY']
+unless GOOGLE_API_KEY
+  p "Set your GOOGLE_API_KEY to ENV"
+  exit
+end
+
+target = ARGV.shift
+text = URI.encode(ARGV.join(' '))
+url = "https://www.googleapis.com/language/translate/v2?key=#{GOOGLE_API_KEY}&target=#{target}&q=#{text}"
+open(url, 'r') { |t| puts JSON.parse(t.read)["data"]["translations"][0]["translatedText"] }
+
+

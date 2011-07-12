@@ -1,0 +1,14 @@
+setevn GOOGLE_API_KEY=(your google api key)
+
+Usage
+-----
+First argument is target language.
+
+> gt ja This is a pen
+これはペンです。
+
+> gt en これはペンです。
+This is a pen.
+
+>gt ja "That's it"
+これで終わりです
