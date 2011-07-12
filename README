@@ -1,4 +1,4 @@
-setevn GOOGLE_API_KEY=(your google api key)
+setenv GOOGLE_API_KEY=(your google api key)
 
 Usage
 -----
